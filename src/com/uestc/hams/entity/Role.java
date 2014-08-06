@@ -10,7 +10,7 @@ public class Role implements java.io.Serializable{
 	private String description;
 	private String districtId;
 	private Set<User> users=new HashSet<User>();
-	private Set<Privilege> privileges=new HashSet<Privilege>();
+	private Set<Privilege> privileges=new HashSet<Privilege>();//当为集合类型的属性一般都选择初始化时，因为一般返回空集合不会报空指针异常
 	public Long getId() {
 		return id;
 	}

@@ -2,7 +2,7 @@ package com.uestc.hams.base;
 
 import java.util.List;
 
-public interface BaseDao<T> {
+public interface DaoSupport<T> {
 	
 	  void save(T entity);
 	  void delete(Long id);

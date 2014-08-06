@@ -7,17 +7,17 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.uestc.hams.dao.RoleDao;
+import com.uestc.hams.base.DaoSupportImpl;
 import com.uestc.hams.entity.Role;
 import com.uestc.hams.service.RoleService;
 
 @Service
 @Transactional
-public class RoleServiceImpl implements RoleService{
+public class RoleServiceImpl extends DaoSupportImpl<Role> implements RoleService{
 
-	@Resource
-	private RoleDao roleDao;
-	public List findAll() {
+	/*@Resource
+	private RoleDao roleDao;*/
+	/*public List findAll() {
 		return roleDao.findAll();
 		
 	}
@@ -32,6 +32,6 @@ public class RoleServiceImpl implements RoleService{
 	}
 	public void update(Role role) {
 		roleDao.update(role);
-	}
+	}*/
 
 }

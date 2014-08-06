@@ -7,31 +7,22 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.uestc.hams.dao.UserDao;
+import com.uestc.hams.base.DaoSupportImpl;
 import com.uestc.hams.entity.User;
 import com.uestc.hams.service.UserService;
 
 @Service
 @Transactional//开启事物
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl extends DaoSupportImpl<User> implements UserService{
+
+	public User findByLoginNameAndPassword(String loginName,String password) {
+		//返回唯一值结果
+		return (User) getSession().createQuery("From User u where u.loginName=? and u.password=?")//
+		.setParameter(0, loginName)//
+		.setParameter(1, password)//
+		.uniqueResult();
+		 
+	}
 	
-	@Resource
-	private UserDao userDao;
-	
-	public List findAll() {
-		return userDao.findAll();
-	}
-
-	public void delete(Long id) {
-		userDao.delete(id);
-	}
-
-	public void save(User user) {
-		userDao.save(user);
-	}
-
-	public void update(User user) {
-		userDao.update(user);
-	}
 
 }

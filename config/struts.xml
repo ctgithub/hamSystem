@@ -22,18 +22,25 @@
 		<result name="list">/WEB-INF/jsp/roleAction/list.jsp</result>
 		<result name="saveUI">/WEB-INF/jsp/roleAction/saveUI.jsp</result>
 		<result name="toList" type="redirectAction">role_list</result>
+		<result name="setPrivilegeUI">/WEB-INF/jsp/roleAction/setPrivilegeUI.jsp</result>
 	</action>
     
+    <!-- 用户管理 -->
     <action name="user_*" class="userAction" method="{1}">
     	<result name="list">/WEB-INF/jsp/userAction/list.jsp</result>
     	<result name="saveUI">/WEB-INF/jsp/userAction/saveUI.jsp</result>
+    	<result name="loginUI">/WEB-INF/jsp/userAction/loginUI.jsp</result>
+    	<result name="logout">/WEB-INF/jsp/userAction/logout.jsp</result>
+    	<result name="toIndex" type="redirect">index.jsp</result>
     	<result name="toList" type="redirectAction">user_list</result>
-    </action>
+    </action> 
     
     <action name="districtIns_*" class="districtInsAction" method="{1}">
     	<result name="list">/WEB-INF/jsp/districtInsAction/list.jsp</result>
-    
+    	<result name="saveUI">/WEB-INF/jsp/districtInsAction/saveUI.jsp</result>
+   		<result name="toList" type="redirectAction">districtIns_list?parentId=${parentId}</result>
     </action>
+    
     
     
     

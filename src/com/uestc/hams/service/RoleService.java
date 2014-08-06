@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.uestc.hams.base.DaoSupport;
 import com.uestc.hams.entity.Role;
 
 /**
@@ -13,8 +14,8 @@ import com.uestc.hams.entity.Role;
  *
  */
 
-public interface RoleService {
-	List findAll();
+public interface RoleService extends DaoSupport<Role>{
+	/*List findAll();
 
 	void delete(Long id);
 
@@ -22,5 +23,5 @@ public interface RoleService {
 
 	Role findById(Long id);
 
-	void update(Role role);
+	void update(Role role);*/
 }

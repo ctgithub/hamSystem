@@ -6,12 +6,21 @@ import java.util.Set;
 public class Privilege {
 
 	private Long id;
-	private String name;
+	private String name;//权限名称
 	private String url;
 	private String description;
 	private Set<Role>roles=new HashSet<Role>();
-	private Privilege parent;
-	private Set<Privilege> children=new HashSet<Privilege>();
+	private Privilege parent;//上级权限
+	private Set<Privilege> children=new HashSet<Privilege>();//下级权限
+	
+	public Privilege(String name, String url, Privilege parent) {
+		super();
+		this.name = name;
+		this.url = url;
+		this.parent = parent;
+	}
+	public Privilege(){
+	}
 	
 	public Set<Role> getRoles() {
 		return roles;
