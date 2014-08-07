@@ -41,7 +41,12 @@
    		<result name="toList" type="redirectAction">districtIns_list?parentId=${parentId}</result>
     </action>
     
-    
+    <!-- 首页 -->
+    <action name="home_*" class="homeAction" method="{1}">
+    	<result name="index">/WEB-INF/jsp/districtInsAction/list.jsp</result>
+    	<result name="left">/WEB-INF/jsp/districtInsAction/saveUI.jsp</result>
+   		<result name="toList" type="redirectAction">districtIns_list?parentId=${parentId}</result>
+    </action>
     
     
     </package>
