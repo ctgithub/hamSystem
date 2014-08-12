@@ -12,7 +12,10 @@
  	 <param-name>contextConfigLocation</param-name>
  	 <param-value>classpath:applicationContext*.xml</param-value>
 	</context-param>
-  
+  <!-- 用于做初始化的监听器,在spring的后面，因为要用到spring的容器对象 -->
+ <listener>
+	<listener-class>com.uestc.hams.util.InitListener</listener-class>
+ </listener>
   
     <!-- 配置Spring的用于解决懒加载问题的过滤器 -->
  

@@ -20,7 +20,7 @@
 		</set>
 		
 		<!-- privileges属性，本类与Privilege的关系 多对多 -->
-		<set name="privileges" table="hams_role_privilege">
+		<set name="privileges" table="hams_role_privilege" lazy="false">
 			<key column="privilegesId"></key>
 			<many-to-many class="Privilege" column="rolesId"></many-to-many>
 		

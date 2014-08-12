@@ -13,8 +13,8 @@
 </span></div>
 
     <div id="Info">
-    	<a href="http://gr.uestc.edu.cn/index.shtml" title = "电子科技大学" target=_blank ></a> |
-        <a href="http://gr.uestc.edu.cn/index.shtml" title = "" target=_blank >测试</a>
+    	<a href="http://www.cqut.edu.cn/" title = "重庆理工大学" target=_blank >重庆理工大学</a> |
+        <a href="http://www.cqut.edu.cn/" title = "" target=_blank >李科成</a>
     </div>
     <DIV id=DesktopText>
         <a href="javascript:void(0)"><img border="0" src="${pageContext.request.contextPath}/style/images/top/text.gif"/> 便笺</a>

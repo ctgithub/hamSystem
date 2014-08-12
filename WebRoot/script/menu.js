@@ -53,7 +53,7 @@ function openPage(urlName) {
 	}
 	else if("desktop" == cfg.target){
 		parent.desktop.location = cfg.url;
-		parent.document.title = "uestcHams - " + urlName;
+		parent.document.title = "uestc -健康档案系统 " + urlName;
 	}
 }
 

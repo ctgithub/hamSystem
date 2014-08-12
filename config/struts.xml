@@ -43,9 +43,12 @@
     
     <!-- 首页 -->
     <action name="home_*" class="homeAction" method="{1}">
-    	<result name="index">/WEB-INF/jsp/districtInsAction/list.jsp</result>
-    	<result name="left">/WEB-INF/jsp/districtInsAction/saveUI.jsp</result>
-   		<result name="toList" type="redirectAction">districtIns_list?parentId=${parentId}</result>
+    	<result name="index">/WEB-INF/jsp/homeAction/index.jsp</result>
+    	<result name="left">/WEB-INF/jsp/homeAction/left.jsp</result>
+    	<result name="right">/WEB-INF/jsp/homeAction/right.jsp</result>
+    	<result name="top">/WEB-INF/jsp/homeAction/top.jsp</result>
+    	<result name="bottom">/WEB-INF/jsp/homeAction/bottom.jsp</result>
+   		<result name="toIndex" type="redirectAction">home_index</result>
     </action>
     
     

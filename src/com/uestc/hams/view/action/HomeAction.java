@@ -1,23 +1,29 @@
 package com.uestc.hams.view.action;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
+
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.uestc.hams.base.BaseAction;
+import com.uestc.hams.entity.User;
 
 /**
  * 主页面
  * @author wujingnan
  *
  */
+@Controller
+@Scope("prototype")
 public class HomeAction extends ActionSupport{
 	
 	
 	public String index() throws Exception {
-		// TODO Auto-generated method stub
 		return "index";
 	}
 
 	public String top() throws Exception {
-		// TODO Auto-generated method stub
+		
 		return "top";
 	}
 	
