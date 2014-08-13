@@ -13,6 +13,25 @@ public class User implements java.io.Serializable{
 	private Set<Role> roles=new HashSet<Role>();
 	private DistrictIns districtIns;
 	
+	/**
+	 * 判断是否有权限
+	 * @param name
+	 * @return
+	 */
+	public boolean hasPrivilegeByName(String name){
+		if("admin".equals(loginName)){
+			return true;
+		}
+		
+		for(Role role:roles){
+			for(Privilege priv:role.getPrivileges()){
+				if(priv.getName().equals(name)){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 	
 	public DistrictIns getDistrictIns() {
 		return districtIns;

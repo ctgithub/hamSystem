@@ -56,7 +56,7 @@
 
 
 <s:checkboxlist name="privilegeIds" list="#privilegeList" listKey="id" listValue="name"></s:checkboxlist> 
-这里是list就有name，list，listkey，listValue
+<!-- 这里是list就有name，list，listkey，listValue -->
 
 <%-- 
 <s:iterator value="#privilegeList">
