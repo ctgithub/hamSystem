@@ -3,10 +3,28 @@
 <head>
 	<title>配置权限</title>
     <%@ include file="/WEB-INF/jsp/public/commons.jspf" %>
+    <!-- 1、导入别人的js和css -->
 	<script language="javascript" src="${pageContext.request.contextPath}/script/jquery_treeview/jquery.treeview.js"></script>
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/style/blue/file.css" />
 	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/script/jquery_treeview/jquery.treeview.css" />
+	<!-- 文档加载完执行 -->
+	<script type="text/javascript">
 	
+		$(function(){
+			// 指定事件处理函数，使用静态页面查看
+			$("[name=privilegeIds]").click(function(){
+				
+				// 当选中或取消一个权限时，也同时选中或取消所有的下级权限，（找到同级ul然后取下级input标签添加checked属性）this表示当前选中的对象，subling同级中的ul
+				$(this).siblings("ul").find("input").attr("checked", this.checked);
+				
+				// 当选中一个权限时，也要选中所有的直接上级权限（上级li的孩子input）
+				if(this.checked == true){
+					$(this).parents("li").children("input").attr("checked", true);
+				}
+				
+			});
+		});
+	</script>
 </head>
 <body>
 
@@ -55,31 +73,35 @@
 
 
 
-<s:checkboxlist name="privilegeIds" list="#privilegeList" listKey="id" listValue="name"></s:checkboxlist> 
-<!-- 这里是list就有name，list，listkey，listValue -->
+<!--易于解决回显的问题<s:checkboxlist name="privilegeIds" list="#privilegeList" listKey="id" listValue="name"></s:checkboxlist> 
+ 这里是list就有name，list，listkey，listValue -->
 
-<%-- 
+<%--取出当前栈顶对象privilegeList中name和id checked是选中 ,（回显问题）s:property（服务端）客户端显示的是他的‘值’，属性中ongl表达式可以不写% in 可用于集合和数组
 <s:iterator value="#privilegeList">
 	<input type="checkbox" name="privilegeIds" value="${id}" id="cb_${id}"
 		<s:property value="%{id in privilegeIds ? 'checked' : ''}"/>
 	/>
-	<label for="cb_${id}">${name}</label>
+	<label for="cb_${id}">${name}</label><!-- for用于点击这个标签指向另外一个的id相当于  -->
 	<br/>
 </s:iterator>
+
 --%>
-<%-- 
 <!-- 显示树状结构内容 -->
+	<!--2、使用ul展示数据  -->
 <ul id="tree">
+<!-- 顶层权限 -->
 <s:iterator value="#application.topPrivilegeList">
 	<li>
 		<input type="checkbox" name="privilegeIds" value="${id}" id="cb_${id}" <s:property value="%{id in privilegeIds ? 'checked' : ''}"/> />
 		<label for="cb_${id}"><span class="folder">${name}</span></label>
 		<ul>
+		<!-- 子权限 span class="folder"背景图片 -->
 		<s:iterator value="children">
 			<li>
 				<input type="checkbox" name="privilegeIds" value="${id}" id="cb_${id}" <s:property value="%{id in privilegeIds ? 'checked' : ''}"/> />
 				<label for="cb_${id}"><span class="folder">${name}</span></label>
 				<ul>
+				<!-- 第三层子权限 -->
 				<s:iterator value="children">
 					<li>
 						<input type="checkbox" name="privilegeIds" value="${id}" id="cb_${id}" <s:property value="%{id in privilegeIds ? 'checked' : ''}"/> />
@@ -93,15 +115,13 @@
 	</li>
 </s:iterator>
 </ul>
---%>
-
 							</td>
 						</tr>
 					</tbody>
                 </table>
             </div>
         </div>
-        
+        <!-- 3显示为树状结构，即加上行为和结构 -->
         <script language="javascript">
         	$("#tree").treeview();
         </script>

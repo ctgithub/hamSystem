@@ -15,7 +15,11 @@ import com.uestc.hams.entity.Privilege;
 import com.uestc.hams.service.PrivilegeService;
 
 
-
+/**
+ * 初始化
+ * @author wujingnan
+ *
+ */
 @Component
 public class InitListener implements ServletContextListener{
 

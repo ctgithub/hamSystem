@@ -13,6 +13,21 @@
 	<constant name="struts.convention.result.path" value="/" />
     <constant name="struts.convention.package.locators" value="action,framelist" />
     <package name="default" namespace="/" extends="struts-default">
+    
+      <interceptors>
+      	<!-- 声明一个拦截器 -->
+      	<interceptor name="checkPrivilege" class="com.uestc.hams.util.CheckPrivilegeInterceptor"></interceptor>
+      	<!-- 重新定义默认拦截器栈，将checkPrivilege放在最前面 -->
+      	<interceptor-stack name="defaultStack">
+    			<interceptor-ref name="checkPrivilege"></interceptor-ref>
+    			<interceptor-ref name="defaultStack"></interceptor-ref>
+    	</interceptor-stack>
+      </interceptors>
+      <global-results>
+      	<result name="loginUI">/WEB-INF/jsp/userAction/loginUI.jsp</result>
+      	<result name="noPrivilegeError">/noPrivilegeError.jsp</result>
+      </global-results>	
+    
       <!-- 当struts2与spring整合后,class属性写类的名称 -->
       <!-- 配置测试用的Action（还未与Spring整合）class写类的全名 -->
       <action name="test" class="com.uestc.hams.test.TestAction">
@@ -29,7 +44,6 @@
     <action name="user_*" class="userAction" method="{1}">
     	<result name="list">/WEB-INF/jsp/userAction/list.jsp</result>
     	<result name="saveUI">/WEB-INF/jsp/userAction/saveUI.jsp</result>
-    	<result name="loginUI">/WEB-INF/jsp/userAction/loginUI.jsp</result>
     	<result name="logout">/WEB-INF/jsp/userAction/logout.jsp</result>
     	<result name="toIndex" type="redirect">index.jsp</result>
     	<result name="toList" type="redirectAction">user_list</result>

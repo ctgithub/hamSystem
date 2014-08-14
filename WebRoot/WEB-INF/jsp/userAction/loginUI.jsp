@@ -1,7 +1,7 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <html>
 <head>
-	<title>Itcast OA</title>
+	<title>健康档案系统</title>
     <%@ include file="/WEB-INF/jsp/public/commons.jspf" %>
 	<link href="${pageContext.request.contextPath}/style/blue/login.css" type=text/css rel=stylesheet>
 	<script type="text/javascript">

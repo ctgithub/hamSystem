@@ -50,9 +50,9 @@
         <div id="Head2_Awoke">
             <ul id="AwokeNum">
                 <!-- 是否有待审批文档的提示1 -->
-                <li><a href="${pageContext.request.contextPath}/flow_myTaskList.action" target="right">
+                <li><a href="#" target="right">
                 		<img border="0" width="12" height="14" src="${pageContext.request.contextPath}/style/images/top/wait.gif" /> 
-                		待办事项（<span id="wait" class="taskListSize">${myTaskList}</span>）
+                		工作提醒（<span id="wait" class="taskListSize"></span>）
                 	</a>
                 </li>
                 <li class="Line"></li>

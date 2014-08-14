@@ -13,12 +13,15 @@
 		<property name="password" />
 		<property name="name" />
 		<property name="gender" />
+		<property name="phoneNumber" />
+		<property name="email" />
+		<property name="description" />
 		
 		<!--roles属性，本类与Role的关系是 多对多  -->
-		<set name="roles" table="hams_user_role">
-			<key column="rolesId"></key>
-			<many-to-many class="Role" column="usersId"></many-to-many>
-		</set>
+		<set name="roles" table="hams_user_role" lazy="false">
+			<key column="userId"></key>
+			<many-to-many class="Role" column="roleId"></many-to-many>		
+	</set>
 		
 		
 		<!-- districtIns属性，本类与DistrictIns关系 多对一 -->

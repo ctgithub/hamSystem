@@ -1,8 +1,14 @@
 package com.uestc.hams.entity;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.opensymphony.xwork2.ActionContext;
+
+/*
+ *用户类，实现序列化接口，当服务器重启时，不会重新登陆 
+ */
 public class User implements java.io.Serializable{
 
 	private Long id;
@@ -10,6 +16,9 @@ public class User implements java.io.Serializable{
 	private String name;
 	private String gender;
 	private String password;
+	private String phoneNumber; // 电话号码
+	private String email; // 电子邮件
+	private String description; // 说明
 	private Set<Role> roles=new HashSet<Role>();
 	private DistrictIns districtIns;
 	
@@ -32,6 +41,41 @@ public class User implements java.io.Serializable{
 		}
 		return false;
 	}
+	
+	public boolean hasPrivilegeByUrl(String privUrl){
+		
+		
+		if("admin".equals(loginName)){
+			return true;
+		}
+		// >> 去掉后面的参数
+		int pos = privUrl.indexOf("?");
+		if (pos > -1) {
+			privUrl = privUrl.substring(0, pos);
+		}
+		// >> 去掉UI后缀
+		if (privUrl.endsWith("UI")) {
+			privUrl = privUrl.substring(0, privUrl.length() - 2);
+		}
+		
+		//如果本url不需要控制，登陆用户可以使用：例如主页面，权限控制也
+		Collection<String>allPrivilegeUrls=(Collection<String>) ActionContext.getContext().getApplication().get("allPrivilegeUrls");
+		if(!allPrivilegeUrls.contains(privUrl)){
+			return true;
+		}else{
+			for(Role role:roles){
+				for(Privilege priv:role.getPrivileges()){
+					if(privUrl.equals(priv.getUrl())){
+						return true;
+					}
+				}
+			}
+			return false;
+		}
+			
+		
+	}
+	
 	
 	public DistrictIns getDistrictIns() {
 		return districtIns;
@@ -74,6 +118,30 @@ public class User implements java.io.Serializable{
 	}
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 }

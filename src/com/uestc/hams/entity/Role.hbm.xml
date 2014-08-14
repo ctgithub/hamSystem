@@ -15,14 +15,14 @@
 		
 		<!--users属性 本类与Role的关系 的多对多  -->
 		<set name="users" table="hams_user_role">
-			<key column="usersId"></key>
-			<many-to-many class="Role" column="rolesId"></many-to-many>
+			<key column="roleId"></key>
+			<many-to-many class="User" column="userId"></many-to-many>
 		</set>
 		
 		<!-- privileges属性，本类与Privilege的关系 多对多 -->
 		<set name="privileges" table="hams_role_privilege" lazy="false">
-			<key column="privilegesId"></key>
-			<many-to-many class="Privilege" column="rolesId"></many-to-many>
+			<key column="roleId"></key>
+			<many-to-many class="Privilege" column="privilegeId"></many-to-many>
 		
 		</set>
 		
