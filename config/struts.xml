@@ -49,6 +49,7 @@
     	<result name="toList" type="redirectAction">user_list</result>
     </action> 
     
+    <!-- 地区机构管理 -->
     <action name="districtIns_*" class="districtInsAction" method="{1}">
     	<result name="list">/WEB-INF/jsp/districtInsAction/list.jsp</result>
     	<result name="saveUI">/WEB-INF/jsp/districtInsAction/saveUI.jsp</result>
@@ -62,9 +63,14 @@
     	<result name="right">/WEB-INF/jsp/homeAction/right.jsp</result>
     	<result name="top">/WEB-INF/jsp/homeAction/top.jsp</result>
     	<result name="bottom">/WEB-INF/jsp/homeAction/bottom.jsp</result>
-   		<result name="toIndex" type="redirectAction">home_index</result>
     </action>
     
+    <!-- 健康档案管理 -->
+    <action name="archive_*" class="residentArchiveAction" method="{1}">
+    	<result name="list">/WEB-INF/jsp/residentArchiveAction/list.jsp</result>
+    	<result name="saveUI">/WEB-INF/jsp/residentArchiveAction/saveUI.jsp</result>
+   		<result name="toList" type="redirectAction">residentArchive_list</result>
+    </action>
     
     </package>
 

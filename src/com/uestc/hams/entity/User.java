@@ -22,6 +22,12 @@ public class User implements java.io.Serializable{
 	private Set<Role> roles=new HashSet<Role>();
 	private DistrictIns districtIns;
 	
+	
+	//档案相关
+	private Set<ResidentArchive>doctorArchives;//医生责任档案
+	private Set<ResidentArchive>recorderArchives;//记录员档案
+	private ResidentArchive residentArchive;//居民档案
+	
 	/**
 	 * 判断是否有权限
 	 * @param name
@@ -142,6 +148,30 @@ public class User implements java.io.Serializable{
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public Set<ResidentArchive> getDoctorArchives() {
+		return doctorArchives;
+	}
+
+	public void setDoctorArchives(Set<ResidentArchive> doctorArchives) {
+		this.doctorArchives = doctorArchives;
+	}
+
+	public Set<ResidentArchive> getRecorderArchives() {
+		return recorderArchives;
+	}
+
+	public void setRecorderArchives(Set<ResidentArchive> recorderArchives) {
+		this.recorderArchives = recorderArchives;
+	}
+
+	public ResidentArchive getResidentArchive() {
+		return residentArchive;
+	}
+
+	public void setResidentArchive(ResidentArchive residentArchive) {
+		this.residentArchive = residentArchive;
 	}
 	
 }
