@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.uestc.hams.entity">
+
+	<class name="ResidentArchive" table="hams_residentArchive">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="rsArchiveId" />
+		<property name="addressId" />
+		<property name="committee" />
+		<property name="rsId" />
+		<property name="workAddr" />
+		<property name="linkManName" />
+		<property name="nationality" />
+		
+		<property name="achiveDate" />
+		<property name="rsBornDate" />
+		
+		<property name="livingType" />
+		<property name="workingType" />
+		<property name="marriageType" />
+		<property name="bloodType" />
+		<property name="rhType" />
+		<property name="educateType" />
+		<property name="exposureType" />
+		<property name="heredityType" />
+		<property name="drugAllergyType" />
+		
+		<property name="payType" />
+		<property name="payTypeString" />
+		
+		<!-- resident属性,本类与User的关系一对一 (测试？one to one)-->
+		<many-to-one name="resident" class="User" column="residentId"></many-to-one>
+		
+		<!-- doctor属性，本类与User的关系为多对一 -->
+		<many-to-one name="doctor" class="User" column="doctorId"></many-to-one>
+		<!-- recorder属性，本类与User的关系为多对一 -->
+		<many-to-one name="recorder" class="User" column="recorderId"></many-to-one>
+	</class>
+	
+</hibernate-mapping>

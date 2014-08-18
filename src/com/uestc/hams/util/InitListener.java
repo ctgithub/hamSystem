@@ -15,7 +15,11 @@ import com.uestc.hams.entity.Privilege;
 import com.uestc.hams.service.PrivilegeService;
 
 
-
+/**
+ * 初始化
+ * @author wujingnan
+ *
+ */
 @Component
 public class InitListener implements ServletContextListener{
 
@@ -30,7 +34,7 @@ public class InitListener implements ServletContextListener{
 	
 	public void contextInitialized(ServletContextEvent sce) {
 
-		//获取容器与service
+		//获取容器与service？？这里没法通过开事务得到
 		ApplicationContext ac = WebApplicationContextUtils.getWebApplicationContext(sce.getServletContext());
 		PrivilegeService privilegeService = (PrivilegeService) ac.getBean("privilegeServiceImpl");//没有起名字默认第一个字母小写
 		//准备数据 topPrivilegeList

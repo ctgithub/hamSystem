@@ -9,12 +9,12 @@
 
 <div id="StatusBar">
     <div id="Online">
-    	在线人员：共 <span class="OnlineUser"  id="onlineUserNum"></span>${userList}人<span class="OnlineView">
+    	在线人员：共 <span class="OnlineUser"  id="onlineUserNum"></span>人<span class="OnlineView">
 </span></div>
 
     <div id="Info">
-    	<a href="http://www.cqut.edu.cn/" title = "重庆理工大学" target=_blank >重庆理工大学</a> |
-        <a href="http://www.cqut.edu.cn/" title = "" target=_blank >李科成</a>
+    	<a href="http://www.uestc.edu.cn/" title = "电子科技大学" target=_blank >电子科技大学</a> |
+        <a href="http://www.uestc.edu.cn/" title = "" target=_blank >uestc-hamSystem</a>
     </div>
     <DIV id=DesktopText>
         <a href="javascript:void(0)"><img border="0" src="${pageContext.request.contextPath}/style/images/top/text.gif"/> 便笺</a>

@@ -3,7 +3,7 @@ package com.uestc.hams.entity;
 import java.util.HashSet;
 import java.util.Set;
 
-public class DistrictIns {
+public class DistrictIns implements java.io.Serializable{
 	private Long id;
 	private String name;
 	private String address;

@@ -1,7 +1,7 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <html>
 <head>
-	<title>您已退出健康档案管理系统</title>
+	<title>退出</title>
      <%@ include file="/WEB-INF/jsp/public/commons.jspf" %>
 	<link href="${pageContext.request.contextPath}/style/blue/logout.css" rel="stylesheet" type="text/css">
 </head>
@@ -13,7 +13,6 @@
 				<div id=Logout>
 					<div id=AwokeMsg>
                         <img id=LogoutImg src="${pageContext.request.contextPath}/style/blue/images/logout/logout.gif" border=0>
-                        <img id=LogoutTitle src="${pageContext.request.contextPath}/style/blue/images/logout/logout1.gif" border=0>
                     </div>
 					<div id=LogoutOperate>
                         <img src="${pageContext.request.contextPath}/style/blue/images/logout/logout2.gif" border=0> 

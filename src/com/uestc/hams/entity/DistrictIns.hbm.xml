@@ -26,8 +26,7 @@
 			<one-to-many class="DistrictIns"/>
 		</set>
 		
-		<!-- users属性 本类与User的关系为 一对多 
-		-->
+		<!-- users属性 本类与User的关系为 一对多 -->
 		<set name="users">
 			<key column="districtInsId"></key>
 			<one-to-many class="User"/>
