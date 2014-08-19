@@ -12,6 +12,7 @@ import com.uestc.hams.base.BaseAction;
 import com.uestc.hams.entity.PhyExam;
 import com.uestc.hams.entity.ResidentArchive;
 import com.uestc.hams.entity.User;
+import com.uestc.hams.service.IPhyExamService;
 import com.uestc.hams.util.ListStringUtils;
 
 /**
@@ -52,6 +53,18 @@ public class PhyExamAction extends BaseAction<PhyExam> {
 	private Long rsaId;
 	//健康档案对应的居民
 	private User resident;
+	//健康体检list
+	private List<PhyExam> phyExams;
+	/**
+	 * 健康体检列表显示
+	 * @return
+	 */
+	public String list(){
+		//获取健康档案id对应的所有健康体检集合
+		phyExams = phyExamService.findAll(rsaId);
+		return "list";
+	}
+	
  	/**
 	 * addUI()方法：跳转到健康体检填写页面
 	 */
@@ -304,6 +317,14 @@ public class PhyExamAction extends BaseAction<PhyExam> {
 
 	public void setResident(User resident) {
 		this.resident = resident;
+	}
+
+	public List<PhyExam> getPhyExams() {
+		return phyExams;
+	}
+
+	public void setPhyExams(List<PhyExam> phyExams) {
+		this.phyExams = phyExams;
 	}
 
 	

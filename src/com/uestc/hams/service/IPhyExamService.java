@@ -7,17 +7,5 @@ import com.uestc.hams.entity.PhyExam;
 
 public interface IPhyExamService extends DaoSupport<PhyExam> {
 
-	/*
-	List<PhyExam> findAll();
-	
-	PhyExam findById(Long id);
-	
-	
-	void save(PhyExam phyExam);
-	
-	void update(PhyExam phyExam);
-	
-	
-	void delete(Long id);
-	*/
+	List<PhyExam> findAll(Long id);
 }
