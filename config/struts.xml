@@ -78,6 +78,8 @@
     	<result name="saveUI">/WEB-INF/jsp/phyExam/saveUI.jsp</result>
     	<result name="toList" type="redirectAction">/WEB-INF/jsp/phyExam/list.jsp</result>
     </action>
+
+
     
     </package>
 

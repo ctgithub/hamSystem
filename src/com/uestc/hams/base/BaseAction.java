@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import com.uestc.hams.entity.ResidentArchive;
 import com.uestc.hams.service.DistrictInsService;
 import com.uestc.hams.service.IPhyExamService;
 import com.uestc.hams.service.PrivilegeService;
@@ -29,10 +30,15 @@ public abstract class BaseAction<T> extends ActionSupport implements ModelDriven
 	protected PrivilegeService privilegeService;
 	
 	@Resource
+
 	protected IPhyExamService phyExamService;
 	
 	@Resource
 	protected ResidentArchiveService residentArchiveService;
+
+
+	
+
 	//====================modelDriven的支持========================
 	protected T model;
 	
