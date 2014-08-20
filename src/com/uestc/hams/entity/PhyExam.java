@@ -160,6 +160,8 @@ public class PhyExam implements Serializable{
 	private User doctor;//责任医生
 	private User recorder;//录入员
 	
+	
+	
 	public Long getId() {
 		return id;
 	}

@@ -2,17 +2,13 @@ package com.uestc.hams.view.action;
 
 
 import java.util.List;
-
-
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.uestc.hams.base.BaseAction;
 import com.uestc.hams.entity.PhyExam;
 import com.uestc.hams.entity.ResidentArchive;
 import com.uestc.hams.entity.User;
-import com.uestc.hams.service.IPhyExamService;
 import com.uestc.hams.util.ListStringUtils;
 
 /**
@@ -21,6 +17,7 @@ import com.uestc.hams.util.ListStringUtils;
  *
  */
 
+@SuppressWarnings("serial")
 @Controller
 @Scope("prototype")
 public class PhyExamAction extends BaseAction<PhyExam> {
@@ -55,15 +52,33 @@ public class PhyExamAction extends BaseAction<PhyExam> {
 	private User resident;
 	//健康体检list
 	private List<PhyExam> phyExams;
+	//页数，请求页面传过来
+	private int page = 1;
+	//页容量,struts.xml文件里面配置
+	private int pageSize;
+	//总页数
+	private int totalPages;
+	
 	/**
-	 * 健康体检列表显示
+	 * 特定健康档案对应的健康体检列表显示
+	 * @return
+	 */
+	public String archiveList(){
+		//获取健康档案id对应的所有健康体检集合
+		phyExams = phyExamService.findByArchiveIdAndPage(rsaId, page, pageSize);
+		totalPages = phyExamService.findTotalPages(pageSize);
+		return "list";
+	}
+	/**
+	 * 返回所有健康体检记录
 	 * @return
 	 */
 	public String list(){
-		//获取健康档案id对应的所有健康体检集合
-		phyExams = phyExamService.findAll(rsaId);
+		phyExams = phyExamService.findByPage(page, pageSize);
+		totalPages = phyExamService.findTotalPages(pageSize);
 		return "list";
 	}
+	
 	
  	/**
 	 * addUI()方法：跳转到健康体检填写页面
@@ -303,14 +318,14 @@ public class PhyExamAction extends BaseAction<PhyExam> {
 		this.residentArchive = residentArchive;
 	}
 
+
+	
 	public Long getRsaId() {
 		return rsaId;
 	}
-
 	public void setRsaId(Long rsaId) {
 		this.rsaId = rsaId;
 	}
-
 	public User getResident() {
 		return resident;
 	}
@@ -325,6 +340,28 @@ public class PhyExamAction extends BaseAction<PhyExam> {
 
 	public void setPhyExams(List<PhyExam> phyExams) {
 		this.phyExams = phyExams;
+	}
+
+	public int getPage() {
+		return page;
+	}
+
+	public void setPage(int page) {
+		this.page = page;
+	}
+
+	public int getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
+	}
+	public int getTotalPages() {
+		return totalPages;
+	}
+	public void setTotalPages(int totalPages) {
+		this.totalPages = totalPages;
 	}
 
 	

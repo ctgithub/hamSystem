@@ -7,7 +7,7 @@ public interface DaoSupport<T> {
 	  void save(T entity);
 	  void delete(Long id);
 	  void update(T entity);
-	  T getById(Long id);
+	  T getById(Long i);
 	  List<T> findAll();
 	  List<T> getByIds(Long[] ids);
 	  
