@@ -23,13 +23,15 @@
 <!--信息表的头部-->
 	<!-- 根据action的addUI方法传过来的健康档案对象显示相应的信息 -->
 <div class="message-head">
-<span>编号：<s:property value="residentArchive.rsArchiveId"/></span><span>姓名：<s:property value="resident.name"/></span><span>性别：<s:property value="resident.gender"/></span><span>出生日期：<s:property value="residentArchive.rsBornDate"/></span>
+<span>编号：<s:property value="#residentArchive.rsArchiveId"/></span><span>姓名：<s:property value="resident.name"/></span><span>性别：<s:property value="resident.gender"/></span><span>出生日期：<s:property value="#residentArchive.rsBornDate"/></span>
 </div>
 <div class="container">
 
 <!--表格-->
 <s:form id="addPhyExamForm" action="phyExam_%{ id == null ? 'add' : 'edit'}" method="post">
 <s:hidden id="id" name="id"/>
+<s:hidden name="rsaId" id="rsaId"/>
+<s:hidden name="residentArchive.id" value="%{#residentArchive.id}" />
 <div class="examination">
 <span class="respon">责任医生：
 	<!-- action传过来的医生的集合doctors作为医生的下拉选项 -->
@@ -55,7 +57,7 @@
  <s:checkboxlist name="symptom" list="#{0:'无症状',1:'头痛',2:'头晕',3:'心悸',
 4:'胸闷',5:'胸痛',6:'慢性咳嗽',7:'咳痰',8:'呼吸困难',9:'多饮',10:'多尿',11:'体重下降',12:'乏力',
 13:'关节肿痛',14:'视力模糊',15:'手脚麻木',16:'尿急',17:'尿痛',18:'便秘',19:'腹泻',20:'恶心呕吐',21:'眼花',
-22:'耳鸣',23:'乳房胀痛',24:'其他'}" listKey="key" listValue="value" value="%{symptom}">
+22:'耳鸣',23:'乳房胀痛',24:'其他'}" listKey="key" listValue="value" value="%{symptom}" theme="simple">
  </s:checkboxlist>
  <s:hidden name="symptom1"/>
  <s:textfield name="symptom2"  cssClass="otherh"/><br /> 

@@ -3,15 +3,15 @@
 <head>
     <title>健康体检</title>
     <%@ include file="/WEB-INF/jsp/public/commons.jspf" %>
-    
-    <script language="javascript" type="text/javascript">
-    	function toPage(page,rasId){
-    		//document.getElementById("currPage").value = page;
-    		//document.getElementById("rsaId").value = rsaId;
-    		window.location.href = "phyExam_${'archiveList'}.action?page="+page+"&rsaId="+rsaId;
-    	}
-    
-    </script>
+<!--    -->
+<!--    <script language="javascript" type="text/javascript">-->
+<!--    	function toPage(page,rasId){-->
+<!--    		//document.getElementById("currPage").value = page;-->
+<!--    		//document.getElementById("rsaId").value = rsaId;-->
+<!--    		window.location.href = "phyExam_${'archiveList'}.action?page="+page+"&rsaId="+(Long)rsaId;-->
+<!--    	}-->
+<!--    -->
+<!--    </script>-->
 </head>
 <body>
 
@@ -29,7 +29,7 @@
 	<!-- 其他功能超链接 -->
     <div id="TableTail">
         <div id="TableTail_inside">
-            <s:a action="phyExam_addUI?rsaId=1"><img src="${pageContext.request.contextPath}/style/images/createNew.png" /></s:a>
+            <s:a action="phyExam_addUI?rsaId=%{rsaId}"><img src="${pageContext.request.contextPath}/style/images/createNew.png" /></s:a>
         </div>
         <!-- 隐藏字段，保存当前页数数据 -->
         <div><s:hidden name="page" id="currPage"/></div>
@@ -74,10 +74,10 @@
 	                  	<s:date name="examDate" format="yyyy-MM-dd"/>
 	                  </td>
 	                 
-	                 <td align="center"><s:property value="doctor.name"/></td>
+	                 <td align="center"><s:property value="doctor.name" /></td>
 	                 <td align="center"><s:property value="recorder.name"/></td>
 	                  <td align="center">                                
-	                  	<s:a action="phyExam_editUI?id=%{id}">修改</s:a>
+	                  	<s:a action="phyExam_editUI?id=%{id}&rsaId=%{rsaId}">修改</s:a>
 	                  	<s:a action="phyExam_delete?id=%{id}" onclick="return confirm('确定要删除吗？')">删除</s:a>                          	
 	                  </td>
 	              </tr>
@@ -91,19 +91,22 @@
 	   		<a href="#">上一页</a>
 	   	</s:if>
 	   	<s:else>
-	   		<a href="javascript:toPage(<s:property value='page-1'/>,<s:property value='rsaId'/>)">上一页</a>
-	   	</s:else>
+	   		<s:a action="phyExam_archiveList?page=%{page-1}&rsaId=%{rsaId}">上一页</s:a>
+	   		<!--<a href="javascript:toPage(<s:property value='page-1'/>,<s:property value='rsaId'/>)">上一页</a>
+	   	--></s:else>
 	   
 	   <s:iterator begin="1" end="totalPages" var="p">
-	   		<a href="javascript:toPage(<s:property value='#p'/>,<s:property value='rsaId'/>)"><s:property value="#p"/></a>
-	   </s:iterator>
+	   		<s:a action="phyExam_archiveList?page=%{p}&rsaId=%{rsaId}"><s:property value="#p"/></s:a>
+	   		<!--<a href="javascript:toPage(<s:property value='#p'/>,<s:property value='rsaId'/>)"><s:property value="#p"/></a>
+	   --></s:iterator>
 	   
 	   <s:if test="page==totalPages">
 	   		<a href="#">下一页</a>
 	   </s:if>
 	   <s:else>
-	   		<a href="javascript:toPage(<s:property value='page+1'/>,<s:property value='rsaId'/>)">下一页</a>
-	   </s:else>
+	   	<s:a action="phyExam_archiveList?page=%{page+1}&rsaId=%{rsaId}">下一页</s:a>
+	   		<!--<a href="javascript:toPage(<s:property value='page+1'/>,<s:property value='rsaId'/>)">下一页</a>
+	   --></s:else>
 	   </div>
 </div>
 

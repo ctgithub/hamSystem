@@ -91,9 +91,13 @@ public class PhyExamAction extends BaseAction<PhyExam> {
 		recorders = userService.findAll();
 		//根据id查询出对应的健康档案对象
 		residentArchive = residentArchiveService.getById(rsaId);
+		//ActionContext.getContext().getValueStack().push(residentArchive);
+		ActionContext.getContext().put("residentArchive", residentArchive);
+		
 		//System.out.println(residentArchive.getRsArchiveId());
 		//System.out.println(residentArchive.getRsBornDate());
 		resident = residentArchive.getResident();
+		
 		
 		return "saveUI";
 	}
@@ -126,7 +130,7 @@ public class PhyExamAction extends BaseAction<PhyExam> {
 		model.setEyeDis1(eyeDis1);
 		//将对象存入数据库
 		phyExamService.save(model);
-		return "list";
+		return "toList";
 	}
 	
 	/**
@@ -192,6 +196,8 @@ public class PhyExamAction extends BaseAction<PhyExam> {
 		eyeDisList = ListStringUtils.stringToList(eyeDis1, ",");
 		//将对象压入值栈
 		ActionContext.getContext().getValueStack().push(phyExam);
+		//ActionContext.getContext().getValueStack().push(residentArchive);
+		ActionContext.getContext().put("residentArchive", residentArchive);
 		return "saveUI";
 	}
 	
@@ -219,7 +225,7 @@ public class PhyExamAction extends BaseAction<PhyExam> {
 		model.setVesselDis1(vesselDis1);
 		model.setEyeDis1(eyeDis1);
 		phyExamService.update(model);		
-		return "list";
+		return "toList";
 		}
 
 	public List<String> getSymptom() {
