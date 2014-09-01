@@ -48,8 +48,7 @@ public class PhyExamAction extends BaseAction<PhyExam> {
 	private ResidentArchive residentArchive;
 	//页面传过来的健康档案的id
 	private Long rsaId;
-	//健康档案对应的居民
-	private User resident;
+
 	//健康体检list
 	private List<PhyExam> phyExams;
 	//页数，请求页面传过来
@@ -96,7 +95,7 @@ public class PhyExamAction extends BaseAction<PhyExam> {
 		
 		//System.out.println(residentArchive.getRsArchiveId());
 		//System.out.println(residentArchive.getRsBornDate());
-		resident = residentArchive.getResident();
+		//resident = residentArchive.getResident();
 		
 		
 		return "saveUI";
@@ -167,11 +166,6 @@ public class PhyExamAction extends BaseAction<PhyExam> {
 			vesselDis1 = phyExam.getVesselDis1();
 			eyeDis1 = phyExam.getEyeDis1();
 			residentArchive = phyExam.getResidentArchive();
-			if(residentArchive==null){
-				System.out.println("kong");
-			}else{
-				resident = residentArchive.getResident();
-			}
 			
 		}else{
 			symptom1 = null;
@@ -332,13 +326,7 @@ public class PhyExamAction extends BaseAction<PhyExam> {
 	public void setRsaId(Long rsaId) {
 		this.rsaId = rsaId;
 	}
-	public User getResident() {
-		return resident;
-	}
-
-	public void setResident(User resident) {
-		this.resident = resident;
-	}
+	
 
 	public List<PhyExam> getPhyExams() {
 		return phyExams;

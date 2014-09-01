@@ -23,7 +23,7 @@
 <!--信息表的头部-->
 	<!-- 根据action的addUI方法传过来的健康档案对象显示相应的信息 -->
 <div class="message-head">
-<span>编号：<s:property value="#residentArchive.rsArchiveId"/></span><span>姓名：<s:property value="resident.name"/></span><span>性别：<s:property value="resident.gender"/></span><span>出生日期：<s:property value="#residentArchive.rsBornDate"/></span>
+<span>编号：<s:property value="#residentArchive.rsArchiveId"/></span><span>姓名：<s:property value="#residentArchive.name"/></span><span>性别：<s:property value="#residentArchive.gender"/></span><span>出生日期：<s:property value="#residentArchive.rsBornDate"/></span>
 </div>
 <div class="container">
 

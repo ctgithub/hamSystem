@@ -163,8 +163,8 @@
 		
 		<property name="examDate" />
 		
-		<!-- ras属性，本类与ResidentArchive关系为多对一 -->
-		<many-to-one name="residentArchive" class="ResidentArchive" column="residentArchiveId"></many-to-one>
+		<!-- ras属性，本类与ResidentArchive关系为多对一  级联删除：当健康档案删除的时候相应的健康体检记录也删除-->
+		<many-to-one name="residentArchive" class="ResidentArchive" column="residentArchiveId" cascade="delete"></many-to-one>
 		
 		<!-- recoder属性，本类与User的关系为多对一 -->
 		<many-to-one name="recorder" class="User" column="recorderId"></many-to-one>

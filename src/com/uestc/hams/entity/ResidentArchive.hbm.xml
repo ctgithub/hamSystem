@@ -15,10 +15,16 @@
 		<property name="rsId" />
 		<property name="workAddr" />
 		<property name="linkManName" />
-		<property name="nationality" />
+		<property name="achiveDate" type="date"/>
+		<property name="rsBornDate" type="date"/>
 		
-		<property name="achiveDate" />
-		<property name="rsBornDate" />
+		
+		<property name="nowAdr" />
+		<property name="streetDisId" />
+		<property name="archiveDisId" />
+		<property name="linkManPhoneNum" />
+		<property name="nationality" />
+		<property name="nationalityString" />
 		
 		<property name="livingType" />
 		<property name="workingType" />
@@ -26,15 +32,22 @@
 		<property name="bloodType" />
 		<property name="rhType" />
 		<property name="educateType" />
-		<property name="exposureType" />
-		<property name="heredityType" />
-		<property name="drugAllergyType" />
+		
+		<property name="residentId"></property>
+		<property name="name" />
+		<property name="gender" />
+		<property name="phoneNumber" />
+		<property name="loginName" />
+		<property name="paperRecorder" />
+		
 		
 		<property name="payType" />
 		<property name="payTypeString" />
 		
-		<!-- resident属性,本类与User的关系一对一 (测试？one to one)-->
-		<many-to-one name="resident" class="User" column="residentId"></many-to-one>
+		
+		<!-- districtIns属性，本类与DistrictIns 关系为 多对一 -->
+		<many-to-one name="districtIns" class="DistrictIns" column="districtInsId"></many-to-one>
+		
 		
 		<!-- doctor属性，本类与User的关系为多对一 -->
 		<many-to-one name="doctor" class="User" column="doctorId"></many-to-one>

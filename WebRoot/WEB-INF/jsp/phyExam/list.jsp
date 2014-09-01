@@ -61,15 +61,15 @@
 	           <s:iterator value="phyExams" >
 	              <tr class="TableDetail1 template">
 	                  <td align="center"><s:property value="residentArchive.rsArchiveId"/></td>
-	                  <td align="center"><s:property value="residentArchive.resident.name"/></td>
-	                  <td align="center"><s:property value="residentArchive.resident.gender"/></td>
+	                  <td align="center"><s:property value="residentArchive.name"/></td>
+	                  <td align="center"><s:property value="residentArchive.gender"/></td>
 	                  <td align="center"><s:property value="15"/></td>	                            
 	                 <!--出生日期，应该用Date  <td>
 	                  	<s:date name="residentArchive.rsBornDate" format="yyyy-MM-dd"/>
 	                  </td>
 	                   -->
 	                  <td align="center"><s:property value="residentArchive.rsBornDate"/></td>	
-	                 <td align="center"><s:property value="residentArchive.resident.phoneNumber"/></td>
+	                 <td align="center"><s:property value="residentArchive.phoneNumber"/></td>
 	                 <td align="center">
 	                  	<s:date name="examDate" format="yyyy-MM-dd"/>
 	                  </td>
