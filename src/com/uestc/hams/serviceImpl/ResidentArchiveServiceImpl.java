@@ -11,6 +11,4 @@ import com.uestc.hams.service.ResidentArchiveService;
 @SuppressWarnings("unchecked")
 public class ResidentArchiveServiceImpl extends DaoSupportImpl<ResidentArchive> implements ResidentArchiveService {
 
-
-
 }

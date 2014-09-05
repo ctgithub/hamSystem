@@ -28,15 +28,15 @@
 		<many-to-one name="districtIns" class="DistrictIns" column="districtInsId"></many-to-one>
 		
 		<!-- residentArchive属性，本类与ResidentArchive关系为一对一 -->
-		<many-to-one name="residentArchive" class="ResidentArchive" column="residentArchiveId"></many-to-one>
+		<many-to-one name="residentArchive" class="ResidentArchive" column="residentArchiveId" cascade="delete"></many-to-one>
 		
 		<!-- doctorArchives属性,本类与ResidentArchive 为一对多 -->
-		<set name="doctorArchives">
+		<set name="doctorArchives" lazy="false">
 			<key column="doctorId"></key>
 			<one-to-many class="ResidentArchive"/>
 		</set>
 		<!-- recorderArchives属性,本类与ResidentArchive 为一对多 -->
-		<set name="recorderArchives">
+		<set name="recorderArchives" lazy="false" >
 			<key column="recorderId"></key>
 			<one-to-many class="ResidentArchive"/>
 		</set>

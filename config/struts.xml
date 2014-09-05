@@ -12,7 +12,7 @@
 	<constant name="struts.ui.theme" value="simple" />
 	<constant name="struts.convention.result.path" value="/" />
     <constant name="struts.convention.package.locators" value="action,framelist" />
-    <package name="default" namespace="/" extends="struts-default">
+    <package name="default" namespace="/" extends="json-default">
     
       <interceptors>
       	<!-- 声明一个拦截器 -->
@@ -21,8 +21,7 @@
       	<interceptor-stack name="defaultStack">
     			<interceptor-ref name="checkPrivilege"></interceptor-ref>
     			<interceptor-ref name="defaultStack"></interceptor-ref>
-    	</interceptor-stack>
-      </interceptors>
+    	</interceptor-stack>      </interceptors>
       <global-results>
       	<result name="loginUI">/WEB-INF/jsp/userAction/loginUI.jsp</result>
       	<result name="noPrivilegeError">/noPrivilegeError.jsp</result>
@@ -65,11 +64,23 @@
     	<result name="bottom">/WEB-INF/jsp/homeAction/bottom.jsp</result>
     </action>
     
-    <!-- 健康档案管理 -->
+    <!-- 健康档案管理	<result name="success">/WEB-INF/jsp/residentArchiveAction/test.jsp</result> -->
     <action name="archive_*" class="residentArchiveAction" method="{1}">
     	<result name="list">/WEB-INF/jsp/residentArchiveAction/list.jsp</result>
     	<result name="saveUI">/WEB-INF/jsp/residentArchiveAction/saveUI.jsp</result>
-   		<result name="toList" type="redirectAction">residentArchive_list</result>
+   		<result name="toList" type="redirectAction">archive_list</result>
+   		<result name="success" type="json">
+   			<param name="root">shoushuText1</param>
+   		</result>
+   			
+    </action>
+    
+    <action name="phyExam_*" class="phyExamAction" method="{1}">
+    	<!-- 设置页容量,即每页显示的记录条数 -->
+    	<param name="pageSize">2</param>
+    	<result name="list">/WEB-INF/jsp/phyExam/list.jsp</result> 
+    	<result name="saveUI">/WEB-INF/jsp/phyExam/saveUI.jsp</result>
+    	<result name="toList" type="redirectAction">phyExam_archiveList?page=${page}&amp;rsaId=${rsaId}</result>
     </action>
     
     </package>

@@ -8,6 +8,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.uestc.hams.entity.ResidentArchive;
 import com.uestc.hams.service.DistrictInsService;
+import com.uestc.hams.service.IPhyExamService;
 import com.uestc.hams.service.PrivilegeService;
 import com.uestc.hams.service.ResidentArchiveService;
 import com.uestc.hams.service.RoleService;
@@ -30,6 +31,9 @@ public abstract class BaseAction<T> extends ActionSupport implements ModelDriven
 	
 	@Resource
 	protected ResidentArchiveService residentArchiveService;
+	
+	@Resource
+	protected IPhyExamService phyExamService;
 	
 	//====================modelDriven的支持========================
 	protected T model;

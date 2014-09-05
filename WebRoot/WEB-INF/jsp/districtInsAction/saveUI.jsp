@@ -42,6 +42,9 @@
                     <tr><td>机构名称</td>
                         <td><s:textfield  name="name" cssClass="InputStyle"/> *</td>
                     </tr>
+                    <tr><td>机构代码</td>
+                        <td><s:textfield  name="districtId" cssClass="InputStyle"/> *</td>
+                    </tr>
                     <tr><td>职能说明</td>
                         <td><s:textarea name="description" cssClass="TextareaStyle"></s:textarea></td>
                     </tr>

@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.uestc.hams.entity">
+
+	<class name="PhyExam" table="hams_phyExam">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="symptom1" />
+		<property name="symptom2" />
+		<property name="temper" />
+		<property name="pulseRate" />
+		<property name="breathe" />
+		<property name="leftBpss" />
+		<property name="leftBpsz" />
+		<property name="rightBpss" />
+		<property name="rightBpsz" />
+		<property name="height" />
+		<property name="weight" />
+		<property name="waist" />
+		<property name="BMI" />
+		<property name="elderHealth" />
+		<property name="elderSelfHelp" />
+		<property name="elderPerceive1" />
+		<property name="elderPerceive2" />
+		<property name="elderEmotion1" />
+		<property name="elderEmotion2" />
+		<property name="exerFre" />
+		<property name="exerTime" />
+		<property name="insTime" />
+		<property name="exerWay" />
+		<property name="diet" />
+		<property name="smoke" />
+		<property name="smokeDay" />
+		<property name="smokeStart" />
+		<property name="smokeEnd" />
+		<property name="drinkFre" />
+		<property name="drinkDay" />
+		<property name="abstinence1" />
+		<property name="abstinence2" />
+		<property name="abstinAge" />
+		<property name="temulence" />
+		<property name="drinkType1" />
+		<property name="drinkType2" />
+		<property name="lip" />
+		<property name="dentition" />
+		<property name="pharyngeal" />
+		<property name="leftVision" />
+		<property name="rightVision" />
+		<property name="leftCav" />
+		<property name="rightCav" />
+		<property name="hearing" />
+		<property name="motorFunction" />
+		<property name="eyebase1" />
+		<property name="eyebase2" />
+		<property name="skin1" />
+		<property name="skin2" />
+		<property name="sclera1" />
+		<property name="sclera2" />
+		<property name="lymph1" />
+		<property name="lymph2" />
+		<property name="barrelChest" />
+		<property name="breathSound1" />
+		<property name="breathSound2" />
+		<property name="rale1" />
+		<property name="rale2" />
+		<property name="heartRate" />
+		<property name="heartRhythm" />
+		<property name="murmur1" />
+		<property name="murmur2" />
+		<property name="tendness1" />
+		<property name="tendness2" />
+		<property name="mass1" />
+		<property name="mass2" />
+		<property name="hepato1" />
+		<property name="hepato2" />
+		<property name="splenauxe1" />
+		<property name="splenauxe2" />
+		<property name="shiftDull1" />
+		<property name="shiftDull2" />
+		<property name="legEdema" />
+		<property name="footPulse" />
+		<property name="dre1" />
+		<property name="dre2" />
+		<property name="breast1" />
+		<property name="breast2" />
+		<property name="vulva1" />
+		<property name="vulva2" />
+		<property name="vagina1" />
+		<property name="vagina2" />
+		<property name="cervix1" />
+		<property name="cervix2" />
+		<property name="corpus1" />
+		<property name="corpus2" />
+		<property name="annex1" />
+		<property name="annex2" />
+		<property name="phyExamElse" />
+		<property name="fbg1" />
+		<property name="fbg2" />
+		<property name="ghb" />
+		<property name="hbsag" />
+		<property name="hgb" />
+		<property name="leu" />
+		<property name="plt" />
+		<property name="cbcElse" />
+		<property name="pro" />
+		<property name="uglu" />
+		<property name="ket" />
+		<property name="bld" />
+		<property name="urineElse" />
+		<property name="mau" />
+		<property name="bloodStool" />
+		<property name="sgpt" />
+		<property name="sgot" />
+		<property name="alb" />
+		<property name="tbil" />
+		<property name="dbil" />
+		<property name="scr" />
+		<property name="bun" />
+		<property name="potassium" />
+		<property name="sodium" />
+		<property name="chol" />
+		<property name="trig" />
+		<property name="ldlc" />
+		<property name="hdlc" />
+		<property name="xray1" />
+		<property name="xray2" />
+		<property name="bultra1" />
+		<property name="bultra2" />
+		<property name="ecg1" />
+		<property name="ecg2" />
+		<property name="smear1" />
+		<property name="smear2" />
+		<property name="auxiExamElse" />
+		<property name="mildPhy" />
+		<property name="faintPhy" />
+		<property name="yangPhy" />
+		<property name="yinPhy" />
+		<property name="tanPhy" />
+		<property name="muggyPhy" />
+		<property name="xueyuPhy" />
+		<property name="qiyuPhy" />
+		<property name="tebingPhy" />
+		<property name="cerebroDis1" />
+		<property name="cerebroDis2" />
+		<property name="kidneyDis1" />
+		<property name="kidneyDis2" />
+		<property name="heartDis1" />
+		<property name="heartDis2" />
+		<property name="vesselDis1" />
+		<property name="vesselDis2" />
+		<property name="eyeDis1" />
+		<property name="eyeDis2" />
+		<property name="nervSysDis1" />
+		<property name="nervSysDis2" />
+		<property name="elseSysDis1" />
+		<property name="elseSysDis2" />
+		<!-- doctor属性，本类与User的关系是多对一 -->
+		<many-to-one name="doctor" class="User" column="doctorId"></many-to-one>
+		
+		<property name="examDate" />
+		
+		<!-- ras属性，本类与ResidentArchive关系为多对一  级联删除：当健康档案删除的时候相应的健康体检记录也删除-->
+		<many-to-one name="residentArchive" class="ResidentArchive" column="residentArchiveId" cascade="delete"></many-to-one>
+		
+		<!-- recoder属性，本类与User的关系为多对一 -->
+		<many-to-one name="recorder" class="User" column="recorderId"></many-to-one>
+	</class>
+	
+</hibernate-mapping>

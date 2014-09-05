@@ -100,7 +100,7 @@ public class UserAction extends BaseAction<User>{
 	//????????
 	public String edit() throws Exception {
 		//1、取出原对象??
-		model=userService.getById(model.getId());
+		/*model=userService.getById(model.getId());*/
 		//2、设置
 		model.setDistrictIns(districtInsService.getById(districtInsId));
 		model.setRoles(new HashSet<Role>(roleService.getByIds(roleIds)));

@@ -32,6 +32,11 @@
 			<one-to-many class="User"/>
 		</set>
 		
+		<!-- residentArchives属性，本类与ResidentArchive 关系为一对多 -->
+		<set name="residentArchives">
+			<key column="districtInsId"></key>
+			<one-to-many class="ResidentArchive"/>
+		</set>
 	</class>
 	
 </hibernate-mapping>

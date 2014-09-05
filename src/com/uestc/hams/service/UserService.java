@@ -9,4 +9,11 @@ public interface UserService extends DaoSupport<User>{
 
 	User findByLoginNameAndPassword(String loginName,String password);
 
+	List<User> findByRoleDoctor();
+
+	List<User> findByRoleRecorder();
+
+	User findByRsArchiveId(Long id);
+
+
 }

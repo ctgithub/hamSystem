@@ -12,7 +12,17 @@ public class DistrictIns implements java.io.Serializable{
 	private DistrictIns parent;
 	private Set<DistrictIns> children;
 	private Set<User>users=new HashSet<User>();
+	private Set<ResidentArchive>residentArchives=new HashSet<ResidentArchive>();
 	
+	
+	
+	
+	public Set<ResidentArchive> getResidentArchives() {
+		return residentArchives;
+	}
+	public void setResidentArchives(Set<ResidentArchive> residentArchives) {
+		this.residentArchives = residentArchives;
+	}
 	public Set<User> getUsers() {
 		return users;
 	}

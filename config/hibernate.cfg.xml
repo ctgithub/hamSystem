@@ -35,6 +35,8 @@
 	<mapping resource="com/uestc/hams/entity/User.hbm.xml" />
 	<mapping resource="com/uestc/hams/entity/DistrictIns.hbm.xml" />
 	<mapping resource="com/uestc/hams/entity/ResidentArchive.hbm.xml" />
+	<mapping resource="com/uestc/hams/entity/PhyExam.hbm.xml" />
+	<mapping resource="com/uestc/hams/entity/PublicIns.hbm.xml" />
 
 
 </session-factory>
