@@ -64,12 +64,12 @@
 	                  <td align="center"><s:property value="residentArchive.name"/></td>
 	                  <td align="center"><s:property value="residentArchive.gender"/></td>
 	                  <td align="center"><s:property value="15"/></td>	                            
-	                 <!--出生日期，应该用Date  <td>
+	                 <!--出生日期，应该用Date-->  
+	                 <td align="center">
 	                  	<s:date name="residentArchive.rsBornDate" format="yyyy-MM-dd"/>
 	                  </td>
-	                   -->
-	                  <td align="center"><s:property value="residentArchive.rsBornDate"/></td>	
-	                 <td align="center"><s:property value="residentArchive.phoneNumber"/></td>
+	                   
+	                  <td align="center"><s:property value="residentArchive.phoneNumber"/></td>
 	                 <td align="center">
 	                  	<s:date name="examDate" format="yyyy-MM-dd"/>
 	                  </td>
@@ -78,7 +78,7 @@
 	                 <td align="center"><s:property value="recorder.name"/></td>
 	                  <td align="center">                                
 	                  	<s:a action="phyExam_editUI?id=%{id}&rsaId=%{rsaId}">修改</s:a>
-	                  	<s:a action="phyExam_delete?id=%{id}" onclick="return confirm('确定要删除吗？')">删除</s:a>                          	
+	                  	<s:a action="phyExam_delete?id=%{id}&rsaId=%{rsaId}" onclick="return confirm('确定要删除吗？')">删除</s:a>                          	
 	                  </td>
 	              </tr>
 	           </s:iterator>  

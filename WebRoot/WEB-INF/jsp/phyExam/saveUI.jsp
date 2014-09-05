@@ -561,7 +561,8 @@
 
 </tbody>
 </table>
-<s:submit value="保存"/>
+<input type="submit" name="submit" value="保存"/>
+<input type="button" name="back" onclick="javascript:history.back(-1);" value="返回"/>
 </s:form>
 
 </div>

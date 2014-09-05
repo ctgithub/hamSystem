@@ -222,6 +222,19 @@ public class PhyExamAction extends BaseAction<PhyExam> {
 		return "toList";
 		}
 
+	/**
+	 * 根据健康体检id删除相应健康体检记录
+	 * @return
+	 */
+	public String delete(){
+		//得到从页面传过来的id
+		Long id = model.getId();
+		if(id != null){
+			phyExamService.delete(id);
+		}
+		return "toList";
+	}
+	
 	public List<String> getSymptom() {
 		return symptom;
 	}
