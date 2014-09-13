@@ -10,6 +10,10 @@ import java.util.Set;
  */
 public class ResidentArchive implements java.io.Serializable{
     
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3423343434324L;
 	private Long id;
 	private String rsArchiveId;//档案id
 	private String addressId;
@@ -66,6 +70,15 @@ public class ResidentArchive implements java.io.Serializable{
 	
 	//private Set<> donateBlood;动态险些方案(公共即可)
 	private Set<PublicIns> bloodTrans;//输血
+	
+	/*
+	 * by yang
+	 */
+	private Family family;
+//	与户主关系
+	private String relationShip;
+	
+	
 	/*private Set<PublicIns> surgerys;//手术
 	private Set<PublicIns> traumas;//外伤
 */	//支付类型
@@ -78,6 +91,22 @@ public class ResidentArchive implements java.io.Serializable{
 	private FamilyDisease childrenDisease;//孩子 
 	*/
 	
+	public Family getFamily() {
+		return family;
+	}
+
+	public void setFamily(Family family) {
+		this.family = family;
+	}
+
+	public String getRelationShip() {
+		return relationShip;
+	}
+
+	public void setRelationShip(String relationShip) {
+		this.relationShip = relationShip;
+	}
+
 	public Long getId() {
 		return id;
 	}

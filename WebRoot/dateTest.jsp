@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ include file=/WEB-INF/jsp/public/commons.jspf" %>
+
 <html>
 <body>
 	<select name="first" id="first" onchange="change(this.value)">
@@ -58,6 +58,7 @@
 		}
 	
 	</script>
+	<%@ include file="/WEB-INF/jsp/public/commons.jspf" %>
 </body>
 
 

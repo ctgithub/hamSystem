@@ -59,6 +59,12 @@
 			<key column="rsBloodTranId"></key>
 			<one-to-many class="PublicIns"/>
 		</set>
+		
+		<!--  by yang -->
+		<!--  family属性与Family类为多对一关联 -->
+		<many-to-one name="family" class="Family" column="familyId" insert="true" 
+		   update="true" ></many-to-one>
+		<property name="relationShip" type="java.lang.String"></property>
 	</class>
 	
 </hibernate-mapping>

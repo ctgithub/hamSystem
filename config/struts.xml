@@ -83,7 +83,62 @@
     	<result name="toList" type="redirectAction">phyExam_archiveList?page=${page}&amp;rsaId=${rsaId}</result>
     </action>
     
+    
+    <!--  by yang -->
+    <action name="family_*" class="com.uestc.hams.view.action.FamilyAction" method="{1}">
+         <result name="listUI">/WEB-INF/jsp/familyAction/list.jsp</result>
+         <result name="saveUI">/WEB-INF/jsp/familyAction/saveUI.jsp</result>
+         <result name="toList" type="redirectAction">family_list</result> 
+         <result name="toFamilyInfo" type="redirectAction">family_info?id=${famId}</result>
+         <result name="memberAddUI">/WEB-INF/jsp/familyAction/memberAddUI.jsp</result>
+         <result name="showFamilyInfoUI">/WEB-INF/jsp/familyAction/familyInfo.jsp</result>
+         <result name="inputAddMemberUI" type="redirectAction">family_memberAddUI?id=${famId}</result>
+         
+         <result name="test">/WEB-INF/jsp/familyAction/AjaxJson.jsp</result>
+         <result name="returnResident" type="json">
+         <param name="root">resident</param>  
+         </result>
+         
+    </action>
+    
+    <action name="json_*" class="com.uestc.hams.view.action.FamilyAction" method="{1}">
+       <result name="message" type="json"></result>
+       <result name="returnResident"  type="json"></result>
+       </action>
+    
+    
+<!--     <action name="jsontest" class="struts2jsonjquery.test.action.JsonJqueryStruts2Action"> -->
+    		<!-- 返回单个值的result -->
+<!--     		<result name="message" type="json"></result> -->
+    		<!-- 返回UserInfo对象的 -->
+<!--     		<result name="userInfo" type="json"></result> -->
+    		<!-- 返回List对象的 -->
+<!--     		<result name="list" type="json"></result> -->
+    		<!-- 返回Map对象的 -->
+<!--     		<result name="map" type="json"></result> -->
+<!--     	</action> -->
+    
     </package>
+    
+<!--     <package name="yang" namespace="/" extends="json-default"> -->
+    
+       
+       
+       
+<!--     </package> -->
+    
+<!--     <package name="yangjson" namespace="/" extends="json-default"> -->
+<!--     	<action name="jsontest" class="struts2jsonjquery.test.action.JsonJqueryStruts2Action"> -->
+    		<!-- 返回单个值的result -->
+<!--     		<result name="message" type="json"></result> -->
+    		<!-- 返回UserInfo对象的 -->
+<!--     		<result name="userInfo" type="json"></result> -->
+    		<!-- 返回List对象的 -->
+<!--     		<result name="list" type="json"></result> -->
+    		<!-- 返回Map对象的 -->
+<!--     		<result name="map" type="json"></result> -->
+<!--     	</action> -->
+<!--     </package> -->
 
   
 

@@ -7,161 +7,161 @@
 
 	<class name="PhyExam" table="hams_phyExam">
 		<id name="id">
-            <generator class="native"/>
+            <generator class="native" />
 		</id>
-		<property name="symptom1" />
-		<property name="symptom2" />
-		<property name="temper" />
-		<property name="pulseRate" />
-		<property name="breathe" />
-		<property name="leftBpss" />
-		<property name="leftBpsz" />
-		<property name="rightBpss" />
-		<property name="rightBpsz" />
-		<property name="height" />
-		<property name="weight" />
-		<property name="waist" />
-		<property name="BMI" />
-		<property name="elderHealth" />
-		<property name="elderSelfHelp" />
-		<property name="elderPerceive1" />
-		<property name="elderPerceive2" />
-		<property name="elderEmotion1" />
-		<property name="elderEmotion2" />
-		<property name="exerFre" />
-		<property name="exerTime" />
-		<property name="insTime" />
-		<property name="exerWay" />
-		<property name="diet" />
-		<property name="smoke" />
-		<property name="smokeDay" />
-		<property name="smokeStart" />
-		<property name="smokeEnd" />
-		<property name="drinkFre" />
-		<property name="drinkDay" />
-		<property name="abstinence1" />
-		<property name="abstinence2" />
-		<property name="abstinAge" />
-		<property name="temulence" />
-		<property name="drinkType1" />
-		<property name="drinkType2" />
-		<property name="lip" />
-		<property name="dentition" />
-		<property name="pharyngeal" />
-		<property name="leftVision" />
-		<property name="rightVision" />
-		<property name="leftCav" />
-		<property name="rightCav" />
-		<property name="hearing" />
-		<property name="motorFunction" />
-		<property name="eyebase1" />
-		<property name="eyebase2" />
-		<property name="skin1" />
-		<property name="skin2" />
-		<property name="sclera1" />
-		<property name="sclera2" />
-		<property name="lymph1" />
-		<property name="lymph2" />
-		<property name="barrelChest" />
-		<property name="breathSound1" />
-		<property name="breathSound2" />
-		<property name="rale1" />
-		<property name="rale2" />
-		<property name="heartRate" />
-		<property name="heartRhythm" />
-		<property name="murmur1" />
-		<property name="murmur2" />
-		<property name="tendness1" />
-		<property name="tendness2" />
-		<property name="mass1" />
-		<property name="mass2" />
-		<property name="hepato1" />
-		<property name="hepato2" />
-		<property name="splenauxe1" />
-		<property name="splenauxe2" />
-		<property name="shiftDull1" />
-		<property name="shiftDull2" />
-		<property name="legEdema" />
-		<property name="footPulse" />
-		<property name="dre1" />
-		<property name="dre2" />
-		<property name="breast1" />
-		<property name="breast2" />
-		<property name="vulva1" />
-		<property name="vulva2" />
-		<property name="vagina1" />
-		<property name="vagina2" />
-		<property name="cervix1" />
-		<property name="cervix2" />
-		<property name="corpus1" />
-		<property name="corpus2" />
-		<property name="annex1" />
-		<property name="annex2" />
-		<property name="phyExamElse" />
-		<property name="fbg1" />
-		<property name="fbg2" />
-		<property name="ghb" />
-		<property name="hbsag" />
-		<property name="hgb" />
-		<property name="leu" />
-		<property name="plt" />
-		<property name="cbcElse" />
-		<property name="pro" />
-		<property name="uglu" />
-		<property name="ket" />
-		<property name="bld" />
-		<property name="urineElse" />
-		<property name="mau" />
-		<property name="bloodStool" />
-		<property name="sgpt" />
-		<property name="sgot" />
-		<property name="alb" />
-		<property name="tbil" />
-		<property name="dbil" />
-		<property name="scr" />
-		<property name="bun" />
-		<property name="potassium" />
-		<property name="sodium" />
-		<property name="chol" />
-		<property name="trig" />
-		<property name="ldlc" />
-		<property name="hdlc" />
-		<property name="xray1" />
-		<property name="xray2" />
-		<property name="bultra1" />
-		<property name="bultra2" />
-		<property name="ecg1" />
-		<property name="ecg2" />
-		<property name="smear1" />
-		<property name="smear2" />
-		<property name="auxiExamElse" />
-		<property name="mildPhy" />
-		<property name="faintPhy" />
-		<property name="yangPhy" />
-		<property name="yinPhy" />
-		<property name="tanPhy" />
-		<property name="muggyPhy" />
-		<property name="xueyuPhy" />
-		<property name="qiyuPhy" />
-		<property name="tebingPhy" />
-		<property name="cerebroDis1" />
-		<property name="cerebroDis2" />
-		<property name="kidneyDis1" />
-		<property name="kidneyDis2" />
-		<property name="heartDis1" />
-		<property name="heartDis2" />
-		<property name="vesselDis1" />
-		<property name="vesselDis2" />
-		<property name="eyeDis1" />
-		<property name="eyeDis2" />
-		<property name="nervSysDis1" />
-		<property name="nervSysDis2" />
-		<property name="elseSysDis1" />
-		<property name="elseSysDis2" />
+		<property length="50"  name="symptom1"  />
+		<property length="50" name="symptom2" />
+		<property length="50" name="temper" />
+		<property length="50" name="pulseRate" />
+		<property length="50" name="breathe" />
+		<property length="50" name="leftBpss" />
+		<property length="50" name="leftBpsz" />
+		<property length="50" name="rightBpss" />
+		<property length="50" name="rightBpsz" />
+		<property length="50" name="height" />
+		<property length="50" name="weight" />
+		<property length="50" name="waist" />
+		<property length="50" name="BMI" />
+		<property length="50" name="elderHealth" />
+		<property length="50" name="elderSelfHelp" />
+		<property length="50" name="elderPerceive1" />
+		<property length="50" name="elderPerceive2" />
+		<property length="50" name="elderEmotion1" />
+		<property length="50" name="elderEmotion2" />
+		<property length="50" name="exerFre" />
+		<property length="50" name="exerTime" />
+		<property length="50" name="insTime" />
+		<property length="50" name="exerWay" />
+		<property length="50" name="diet" />
+		<property length="50" name="smoke" />
+		<property length="50" name="smokeDay" />
+		<property length="50" name="smokeStart" />
+		<property length="50" name="smokeEnd" />
+		<property length="50" name="drinkFre" />
+		<property length="50" name="drinkDay" />
+		<property length="50" name="abstinence1" />
+		<property length="50" name="abstinence2" />
+		<property length="50" name="abstinAge" />
+		<property length="50" name="temulence" />
+		<property length="50" name="drinkType1" />
+		<property length="50" name="drinkType2" />
+		<property length="50" name="lip" />
+		<property length="50" name="dentition" />
+		<property length="50" name="pharyngeal" />
+		<property length="50" name="leftVision" />
+		<property length="50" name="rightVision" />
+		<property length="50" name="leftCav" />
+		<property length="50" name="rightCav" />
+		<property length="50" name="hearing" />
+		<property length="50" name="motorFunction" />
+		<property length="50" name="eyebase1" />
+		<property length="50" name="eyebase2" />
+		<property length="50" name="skin1" />
+		<property length="50" name="skin2" />
+		<property length="50" name="sclera1" />
+		<property length="50" name="sclera2" />
+		<property length="50" name="lymph1" />
+		<property length="50" name="lymph2" />
+		<property length="50" name="barrelChest" />
+		<property length="50" name="breathSound1" />
+		<property length="50" name="breathSound2" />
+		<property length="50" name="rale1" />
+		<property length="50" name="rale2" />
+		<property length="50" name="heartRate" />
+		<property length="50" name="heartRhythm" />
+		<property length="50" name="murmur1" />
+		<property length="50" name="murmur2" />
+		<property length="50" name="tendness1" />
+		<property length="50" name="tendness2" />
+		<property length="50" name="mass1" />
+		<property length="50" name="mass2" />
+		<property length="50" name="hepato1" />
+		<property length="50" name="hepato2" />
+		<property length="50" name="splenauxe1" />
+		<property length="50" name="splenauxe2" />
+		<property length="50" name="shiftDull1" />
+		<property length="50" name="shiftDull2" />
+		<property length="50" name="legEdema" />
+		<property length="50" name="footPulse" />
+		<property length="50" name="dre1" />
+		<property length="50" name="dre2" />
+		<property length="50" name="breast1" />
+		<property length="50" name="breast2" />
+		<property length="50" name="vulva1" />
+		<property length="50" name="vulva2" />
+		<property length="50" name="vagina1" />
+		<property length="50" name="vagina2" />
+		<property length="50" name="cervix1" />
+		<property length="50" name="cervix2" />
+		<property length="50" name="corpus1" />
+		<property length="50" name="corpus2" />
+		<property length="50" name="annex1" />
+		<property length="50" name="annex2" />
+		<property length="50" name="phyExamElse" />
+		<property length="50" name="fbg1" />
+		<property length="50" name="fbg2" />
+		<property length="50" name="ghb" />
+		<property length="50" name="hbsag" />
+		<property length="50" name="hgb" />
+		<property length="50" name="leu" />
+		<property length="50" name="plt" />
+		<property length="50" name="cbcElse" />
+		<property length="50" name="pro" />
+		<property length="50" name="uglu" />
+		<property length="50" name="ket" />
+		<property length="50" name="bld" />
+		<property length="50" name="urineElse" />
+		<property length="50" name="mau" />
+		<property length="50" name="bloodStool" />
+		<property length="50" name="sgpt" />
+		<property length="50" name="sgot" />
+		<property length="50" name="alb" />
+		<property length="50" name="tbil" />
+		<property length="50" name="dbil" />
+		<property length="50" name="scr" />
+		<property length="50" name="bun" />
+		<property length="50" name="potassium" />
+		<property length="50" name="sodium" />
+		<property length="50" name="chol" />
+		<property length="50" name="trig" />
+		<property length="50" name="ldlc" />
+		<property length="50" name="hdlc" />
+		<property length="50" name="xray1" />
+		<property length="50" name="xray2" />
+		<property length="50" name="bultra1" />
+		<property length="50" name="bultra2" />
+		<property length="50" name="ecg1" />
+		<property length="50" name="ecg2" />
+		<property length="50" name="smear1" />
+		<property length="50" name="smear2" />
+		<property length="50" name="auxiExamElse" />
+		<property length="50" name="mildPhy" />
+		<property length="50" name="faintPhy" />
+		<property length="50" name="yangPhy" />
+		<property length="50" name="yinPhy" />
+		<property length="50" name="tanPhy" />
+		<property length="50" name="muggyPhy" />
+		<property length="50" name="xueyuPhy" />
+		<property length="50" name="qiyuPhy" />
+		<property length="50" name="tebingPhy" />
+		<property length="50" name="cerebroDis1" />
+		<property length="50" name="cerebroDis2" />
+		<property length="50" name="kidneyDis1" />
+		<property length="50" name="kidneyDis2" />
+		<property length="50" name="heartDis1" />
+		<property length="50" name="heartDis2" />
+		<property length="50" name="vesselDis1" />
+		<property length="50" name="vesselDis2" />
+		<property length="50" name="eyeDis1" />
+		<property length="50" name="eyeDis2" />
+		<property length="50" name="nervSysDis1" />
+		<property length="50" name="nervSysDis2" />
+		<property length="50" name="elseSysDis1" />
+		<property length="50" name="elseSysDis2" />
 		<!-- doctor属性，本类与User的关系是多对一 -->
 		<many-to-one name="doctor" class="User" column="doctorId"></many-to-one>
 		
-		<property name="examDate" />
+		<property length="50" name="examDate" />
 		
 		<!-- ras属性，本类与ResidentArchive关系为多对一  级联删除：当健康档案删除的时候相应的健康体检记录也删除-->
 		<many-to-one name="residentArchive" class="ResidentArchive" column="residentArchiveId" ></many-to-one>

@@ -11,18 +11,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  <head>
  	<SCRIPT type="text/javascript">
  	//任意点击时关闭该控件 
-	function document.onclick(){ 
-	with(window.event.srcElement){ 
-	if (tagName != "INPUT" && getAttribute("Author") != "tiannet") 
-	tiannetHideControl(); 
-	} 
-} 
-//按ESC键关闭该控件 
-function document.onkeypress(){ 
-if( event.keyCode == 27 ){ 
-tiannetHideControl(); 
-} 
-} 
+// 	function document.onclick(){ 
+// 	with(window.event.srcElement){ 
+// 	if (tagName != "INPUT" && getAttribute("Author") != "tiannet") 
+// 	tiannetHideControl(); 
+// 	} 
+// } 
+按ESC键关闭该控件 
+// function document.onkeypress(){ 
+// if( event.keyCode == 27 ){ 
+// tiannetHideControl(); 
+// } 
+// } 
  	</SCRIPT>
  <script language="javascript" src="${pageContext.request.contextPath}/script/date.js" charset="utf-8"></script>
  
